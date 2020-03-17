@@ -1,0 +1,21 @@
+.DS_Store
+db.sqlite3
+
+# Environment files #
+*env
+
+# Django #
+*.log
+*.pot
+*.pyc
+__pycache__
+media
+
+# Backup files #
+*.bak
+
+# PyCharm #
+.idea/
+
+# Data file
+*.xml
