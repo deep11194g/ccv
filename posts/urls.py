@@ -1,6 +1,8 @@
-from django.urls import path
-from . import views
+from django.conf.urls import url
+from posts.serializers import PostListView
+from posts import views
 
 urlpatterns = [
-    path('', views.index, name='index'),
+    url('bulk-create/', views.bulk_create, name='bulk post create'),
+    url('', PostListView.as_view(), name='list all post'),
 ]
