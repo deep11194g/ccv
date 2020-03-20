@@ -6,10 +6,10 @@ from posts.models import Post
 
 
 # Serializers define the API representation.
-class PostSerializer(serializers.Serializer):
+class PostSerializer(serializers.ModelSerializer):
     class Meta:
         model = Post
-        fields = ('id', 'post_id', 'title', 'body', 'score', 'count')
+        fields = '__all__'
 
 
 # List view with filter and search

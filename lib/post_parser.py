@@ -1,3 +1,4 @@
+import logging
 import xml.etree.ElementTree as et
 import urllib
 from urllib import request
@@ -56,8 +57,11 @@ def create_posts_from_xml(url):
                 continue        # XML key not of our interest
             attribute = object_attr_type[0]
             data_type = object_attr_type[1]
-            # Type cast and assign value to mapped attribute of `post` object
-            setattr(new_post, attribute, data_type(value))
+            try :
+                # Type cast and assign value to mapped attribute of `post` object
+                setattr(new_post, attribute, data_type(value))
+            except (TypeError, ValueError) as e:
+                continue
         new_post.save()
         count += 1
     print("{} Posts added".format(count))
