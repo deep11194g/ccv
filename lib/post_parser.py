@@ -1,4 +1,3 @@
-import logging
 import xml.etree.ElementTree as et
 import urllib
 from urllib import request
